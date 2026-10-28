@@ -6,6 +6,16 @@
   --muted: #52525b;
   --line: #e4e4e7;
   --accent: #2563eb;
+  color-scheme: light;
+}
+
+.dark {
+  --background: #0f1115;
+  --foreground: #f4f4f5;
+  --muted: #a1a1aa;
+  --line: #27272a;
+  --accent: #60a5fa;
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -23,7 +33,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 4rem;
 }
 
 body {
@@ -32,14 +42,33 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+body,
+body * {
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+
+.theme-toggle-icon {
+  transition: none !important;
+}
+
 ::selection {
   background: #dbeafe;
   color: #1e3a8a;
 }
 
+.dark ::selection {
+  background: #1d4ed8;
+  color: #eff6ff;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 4rem;
+  }
+
+  body,
+  body * {
+    transition: none !important;
   }
 }
