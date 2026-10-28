@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 
 export const metadata: Metadata = {
@@ -14,7 +13,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full bg-background text-foreground">
         <Navbar />
         <main>{children}</main>
-        <Footer />
       </body>
     </html>
   );
