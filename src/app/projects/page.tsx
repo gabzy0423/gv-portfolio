@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Projects | Your Name",
-  description: "Selected projects by Your Name.",
+  title: "Projects | Gabriel Vargas",
+  description: "Selected projects by Gabriel Vargas.",
 };
 
 export default function ProjectsPage() {

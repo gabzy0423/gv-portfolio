@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Contact | Your Name",
-  description: "Get in touch with Your Name.",
+  title: "Contact | Gabriel Vargas",
+  description: "Get in touch with Gabriel Vargas.",
 };
 
 export default function ContactPage() {

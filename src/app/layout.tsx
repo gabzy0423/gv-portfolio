@@ -11,8 +11,8 @@ const themeScript = `
 `;
 
 export const metadata: Metadata = {
-  title: "Your Name | Software Developer",
-  description: "A personal portfolio for Your Name, software developer.",
+  title: "Gabriel Vargas | Software Developer",
+  description: "A personal portfolio for Gabriel Vargas, software developer.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

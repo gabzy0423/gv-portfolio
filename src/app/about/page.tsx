@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "About | Your Name",
-  description: "About Your Name, software developer.",
+  title: "About | Gabriel Vargas",
+  description: "About Gabriel Vargas, software developer.",
 };
 
 export default function AboutPage() {
