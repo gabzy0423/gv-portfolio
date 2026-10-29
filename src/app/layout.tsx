@@ -13,6 +13,11 @@ const themeScript = `
 export const metadata: Metadata = {
   title: "Gabriel Vargas | Software Developer",
   description: "A personal portfolio for Gabriel Vargas, software developer.",
+  icons: {
+    icon: "/images/branding/apple-touch-icon.png",
+    shortcut: "/images/branding/apple-touch-icon.png",
+    apple: "/images/branding/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
