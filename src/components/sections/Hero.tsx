@@ -77,7 +77,7 @@ export function Hero() {
 export function HeroHighlights() {
   return (
     <section aria-label="Portfolio highlights" className="mx-auto max-w-4xl px-4 pb-12 sm:px-6 sm:pb-16">
-      <ul className="grid gap-3 sm:grid-cols-2 lg:w-[calc(100%+5rem)] lg:grid-cols-4">
+      <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <li className="rounded-lg border border-line bg-foreground/[0.03] px-4 py-3 transition-colors duration-300 hover:border-accent/50">
           <p className="font-pixel text-2xl font-bold tracking-tight text-foreground">3<span className="text-accent">+</span> yrs</p>
           <p className="mt-1 font-mono text-[11px] text-muted">Experience</p>

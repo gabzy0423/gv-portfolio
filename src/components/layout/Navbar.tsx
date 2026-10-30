@@ -102,6 +102,7 @@ export function Navbar() {
             id="mobile-navigation"
             aria-label="Mobile navigation"
             aria-modal="true"
+            data-lenis-prevent
             className={`mobile-menu-sheet fixed inset-x-0 top-10 z-40 flex h-[calc(100vh-2.5rem)] w-full flex-col overflow-y-auto rounded-b-2xl border border-t-0 border-line bg-background p-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] shadow-xl sm:hidden ${isMenuOpen ? "mobile-menu-open" : "mobile-menu-closing"}`}
           >
             <div className="flex flex-col gap-1 font-mono text-sm text-muted">

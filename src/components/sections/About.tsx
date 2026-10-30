@@ -173,7 +173,7 @@ export function OutsideIde() {
           </a>
         </div>
 
-        <div className="heatmap-scroll mt-6 overflow-x-auto rounded-2xl border border-dashed border-line bg-surface/60 p-5">
+        <div data-lenis-prevent className="heatmap-scroll mt-6 overflow-x-auto rounded-2xl border border-dashed border-line bg-surface/60 p-5">
           <GitHubHeatmap />
         </div>
       </div>

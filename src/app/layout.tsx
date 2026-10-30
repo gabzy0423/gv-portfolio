@@ -4,6 +4,8 @@ import { GeistPixelSquare } from "geist/font/pixel";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { SmoothScroll } from "@/components/layout/SmoothScroll";
+import "lenis/dist/lenis.css";
 
 const geist = Geist({
   variable: "--font-geist",
@@ -45,6 +47,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="min-h-full overflow-x-clip bg-background text-foreground">
+        <SmoothScroll />
         <Navbar />
         <main>{children}</main>
         <Footer />
