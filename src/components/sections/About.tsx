@@ -167,7 +167,7 @@ export function OutsideIde() {
             href="https://github.com/gabzy0423"
             target="_blank"
             rel="noreferrer"
-            className="font-mono text-xs text-muted transition-colors hover:text-accent"
+            className="font-pixel text-xs text-muted transition-colors hover:text-accent"
           >
             View GitHub ↗
           </a>

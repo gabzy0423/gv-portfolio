@@ -1,16 +1,19 @@
+import Link from "next/link";
 import { technologies } from "@/data/technologies";
 
 const technologyRows = [technologies.slice(0, 8), technologies.slice(8, 16), technologies.slice(16)];
 
 export function TechStack() {
   return (
-    <section aria-labelledby="tech-stack-heading" className="mx-auto mt-16 w-full max-w-4xl overflow-x-hidden px-6 pb-16 pt-20 lg:mt-24 lg:pb-24 lg:pt-24">
+    <section id="tech-stack" aria-labelledby="tech-stack-heading" className="mx-auto mt-16 w-full max-w-4xl overflow-x-hidden px-6 pb-16 pt-20 lg:mt-24 lg:pb-24 lg:pt-24">
       <div className="flex items-end justify-between gap-4">
         <div>
           <p className="font-pixel text-sm font-bold tracking-tight text-foreground">03 — Tech Stack</p>
           <h2 id="tech-stack-heading" className="mt-3 font-mono text-3xl font-semibold tracking-tight">Technologies</h2>
         </div>
-        <span className="font-mono text-xs font-semibold text-muted">View All ↗</span>
+        <Link href="#tech-stack" className="shrink-0 font-pixel text-xs font-semibold text-muted transition-[color,transform] duration-300 ease-out hover:translate-x-0.5 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-background">
+          View All ↗
+        </Link>
       </div>
       <div className="mt-8 space-y-3">
         {technologyRows.map((row, rowIndex) => (

@@ -55,7 +55,7 @@ export function Hero() {
         <div className="mt-8 grid grid-cols-2 gap-2 sm:mt-5 sm:flex sm:flex-wrap sm:items-center sm:gap-4">
           <Link
             href="/contact"
-            className="inline-flex min-h-9 items-center justify-center rounded-md bg-foreground px-3 py-2 text-xs font-semibold text-background transition-colors hover:bg-foreground/85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:min-h-11 sm:px-5 sm:py-3 sm:text-sm"
+            className="inline-flex min-h-9 items-center justify-center rounded-md bg-foreground px-3 py-2 text-xs font-semibold text-background transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:min-h-11 sm:px-5 sm:py-3 sm:text-sm"
           >
             Let&apos;s build
             <RocketLaunchIcon aria-hidden="true" className="ml-3 size-4" />
@@ -63,7 +63,7 @@ export function Hero() {
           <span
             aria-disabled="true"
             title="Resume coming soon"
-            className="inline-flex min-h-9 cursor-not-allowed items-center justify-center rounded-md bg-muted/15 px-3 py-2 text-xs font-semibold text-muted sm:min-h-11 sm:px-5 sm:py-3 sm:text-sm"
+            className="inline-flex min-h-9 cursor-not-allowed items-center justify-center rounded-md bg-muted/15 px-3 py-2 font-pixel text-xs font-semibold text-muted sm:min-h-11 sm:px-5 sm:py-3 sm:text-sm"
           >
             View my resume
           </span>

@@ -13,7 +13,7 @@ export function Projects({ showAll = false }: { showAll?: boolean }) {
           <h2 id="projects-heading" className="mt-3 font-mono text-3xl font-semibold tracking-tight">Selected work</h2>
         </div>
         {!showAll && (
-          <Link href="/projects" className="shrink-0 font-mono text-xs font-semibold text-muted transition-[color,transform] duration-300 ease-out hover:translate-x-0.5 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-background">
+          <Link href="/projects" className="shrink-0 font-pixel text-xs font-semibold text-muted transition-[color,transform] duration-300 ease-out hover:translate-x-0.5 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-background">
             View all projects ↗
           </Link>
         )}
@@ -42,7 +42,7 @@ export function Projects({ showAll = false }: { showAll?: boolean }) {
               <div className="relative z-10">
                 <div className="flex items-center justify-between gap-3">
                   <span className="rounded-full border border-line bg-background/40 px-2.5 py-1 font-mono text-[10px] font-semibold text-accent backdrop-blur-sm">PROJECT 0{index + 1}</span>
-                  <span className="font-mono text-xs text-muted transition-colors duration-300 group-hover:text-accent">View ↗</span>
+                  <span className="font-pixel text-xs text-muted transition-colors duration-300 group-hover:text-accent">View ↗</span>
                 </div>
                 <h3 className="mt-6 text-2xl font-semibold tracking-tight transition-colors duration-300 group-hover:text-accent">{project.title}</h3>
                 <p className="mt-3 max-w-xl text-sm leading-6 text-muted">{project.summary}</p>

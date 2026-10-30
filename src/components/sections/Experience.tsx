@@ -6,7 +6,7 @@ export function Experience() {
       <div className="mx-auto max-w-4xl px-6 py-20 lg:py-24">
         <div className="flex items-center justify-between gap-4">
           <p className="font-pixel text-sm font-bold tracking-tight">02 — Experience</p>
-          <span className="font-mono text-xs font-semibold text-muted transition-[color,transform] duration-300 ease-out hover:translate-x-0.5 hover:text-accent">View details ↗</span>
+          <span className="font-pixel text-xs font-semibold text-muted transition-[color,transform] duration-300 ease-out hover:translate-x-0.5 hover:text-accent">View details ↗</span>
         </div>
         <h2 id="experience-heading" className="mt-3 font-mono text-3xl font-semibold tracking-tight">Where I&apos;ve worked</h2>
         <div className="relative mt-12 border-l border-line pl-6 sm:pl-8">
