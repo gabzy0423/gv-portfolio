@@ -4,6 +4,7 @@ import { TechStack } from "@/components/sections/TechStack";
 import { TechStackMarquee } from "@/components/sections/TechStackMarquee";
 import { Experience } from "@/components/sections/Experience";
 import { OutsideIde } from "@/components/sections/About";
+import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Experience />
       <TechStack />
       <OutsideIde />
+      <Contact />
     </>
   );
 }

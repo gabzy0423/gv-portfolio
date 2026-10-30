@@ -7,11 +7,16 @@ export function Projects({ showAll = false }: { showAll?: boolean }) {
 
   return (
     <section id="projects" aria-labelledby="projects-heading" className="mx-auto mt-16 max-w-4xl px-6 pb-12 pt-20 lg:mt-24 lg:pb-16 lg:pt-24">
-      <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+      <div className="flex items-center justify-between gap-4">
         <div>
           <p className="font-pixel text-sm font-bold tracking-tight text-foreground">01 — Projects</p>
           <h2 id="projects-heading" className="mt-3 font-mono text-3xl font-semibold tracking-tight">Selected work</h2>
         </div>
+        {!showAll && (
+          <Link href="/projects" className="shrink-0 font-mono text-xs font-semibold text-muted transition-[color,transform] duration-300 ease-out hover:translate-x-0.5 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-background">
+            View all projects ↗
+          </Link>
+        )}
       </div>
 
       <div className="mt-10 grid gap-5 md:auto-rows-[10rem] md:grid-cols-4">
@@ -51,12 +56,6 @@ export function Projects({ showAll = false }: { showAll?: boolean }) {
           );
         })}
       </div>
-
-      {!showAll && (
-        <div className="mt-8 flex justify-center">
-          <Link href="/projects" className="inline-flex min-h-10 items-center rounded-md border border-line px-4 py-2 font-mono text-sm font-semibold text-foreground transition-colors hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background">View all projects ↗</Link>
-        </div>
-      )}
     </section>
   );
 }

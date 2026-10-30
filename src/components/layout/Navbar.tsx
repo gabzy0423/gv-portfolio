@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Bars3Icon, EnvelopeIcon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -55,10 +56,10 @@ export function Navbar() {
   }, [isMenuOpen, isMenuMounted]);
 
   return (
-    <header className="sticky top-0 z-30 border-b border-line bg-background">
+    <header className="sticky top-0 z-30 border-b border-line bg-background/75 shadow-sm backdrop-blur-xl backdrop-saturate-150">
       <nav aria-label="Primary navigation" className="mx-auto flex min-h-16 max-w-4xl items-center justify-between gap-4 px-6">
         <Link href="/" className="shrink-0 font-mono text-base font-bold tracking-tight text-foreground" aria-label="GV home">
-          GV
+          <Image src="/images/branding/gv-favicon.svg" alt="GV" width={28} height={28} className="size-7 rounded-md" priority />
         </Link>
         <div className="flex items-center gap-2">
           <div className="hidden items-center gap-x-4 font-mono text-[13px] font-normal text-muted sm:flex md:gap-x-7">
