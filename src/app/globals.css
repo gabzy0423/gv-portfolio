@@ -48,20 +48,46 @@ body * {
   transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
 }
 
-@keyframes mobile-menu-reveal {
+@keyframes mobile-menu-fade-in {
   from {
-    clip-path: inset(0 0 100% 0);
     opacity: 0;
   }
 
   to {
-    clip-path: inset(0 0 0 0);
     opacity: 1;
   }
 }
 
-.mobile-menu-sheet {
-  animation: mobile-menu-reveal 220ms ease-out;
+@keyframes mobile-menu-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.mobile-menu-open {
+  animation: mobile-menu-fade-in 520ms ease-out forwards;
+}
+
+.mobile-menu-closing {
+  animation: mobile-menu-fade-out 520ms ease-in forwards;
+  pointer-events: none;
+}
+
+.mobile-menu-backdrop.mobile-menu-open,
+.mobile-menu-backdrop.mobile-menu-closing {
+  animation-duration: 220ms;
+}
+
+.mobile-menu-sheet.mobile-menu-closing {
+  animation-duration: 260ms;
+}
+
+.mobile-menu-backdrop.mobile-menu-closing {
+  animation-duration: 160ms;
 }
 
 ::selection {
@@ -85,7 +111,8 @@ body * {
     transition: none !important;
   }
 
-  .mobile-menu-sheet {
+  .mobile-menu-open,
+  .mobile-menu-closing {
     animation: none !important;
   }
 }

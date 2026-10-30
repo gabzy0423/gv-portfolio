@@ -13,19 +13,46 @@ const links = [
   { href: "/contact", label: "Community" },
 ];
 
+const MENU_CLOSE_DURATION = 260;
+
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuMounted, setIsMenuMounted] = useState(false);
+
+  function closeMenu() {
+    setIsMenuOpen(false);
+  }
+
+  function toggleMenu() {
+    if (isMenuOpen) {
+      closeMenu();
+      return;
+    }
+
+    setIsMenuMounted(true);
+    setIsMenuOpen(true);
+  }
 
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
-        setIsMenuOpen(false);
+        closeMenu();
       }
     }
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
+
+  useEffect(() => {
+    if (isMenuOpen || !isMenuMounted) {
+      return;
+    }
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const timeout = window.setTimeout(() => setIsMenuMounted(false), prefersReducedMotion ? 0 : MENU_CLOSE_DURATION);
+    return () => window.clearTimeout(timeout);
+  }, [isMenuOpen, isMenuMounted]);
 
   return (
     <header className="sticky top-0 z-30 border-b border-line bg-background">
@@ -47,7 +74,7 @@ export function Navbar() {
           </div>
           <button
             type="button"
-            onClick={() => setIsMenuOpen((open) => !open)}
+            onClick={toggleMenu}
             aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-controls="mobile-navigation"
             aria-expanded={isMenuOpen}
@@ -61,27 +88,27 @@ export function Navbar() {
         </div>
       </nav>
 
-      {isMenuOpen && (
+      {isMenuMounted && (
         <>
           <button
             type="button"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={closeMenu}
             aria-label="Close navigation menu"
-            className="fixed inset-x-0 bottom-0 top-16 z-30 bg-black/20 sm:hidden"
+            className={`mobile-menu-backdrop fixed inset-x-0 bottom-0 top-16 z-30 bg-black/20 sm:hidden ${isMenuOpen ? "mobile-menu-open" : "mobile-menu-closing"}`}
           />
           <aside
             role="dialog"
             id="mobile-navigation"
             aria-label="Mobile navigation"
             aria-modal="true"
-            className="mobile-menu-sheet fixed inset-x-0 top-16 z-40 flex h-[calc(100vh-4rem)] w-full flex-col overflow-y-auto rounded-b-2xl border border-t-0 border-line bg-background p-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] shadow-xl sm:hidden"
+            className={`mobile-menu-sheet fixed inset-x-0 top-16 z-40 flex h-[calc(100vh-4rem)] w-full flex-col overflow-y-auto rounded-b-2xl border border-t-0 border-line bg-background p-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] shadow-xl sm:hidden ${isMenuOpen ? "mobile-menu-open" : "mobile-menu-closing"}`}
           >
             <div className="flex flex-col gap-1 font-mono text-sm text-muted">
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={closeMenu}
                   className="rounded-md px-0 py-2 transition-colors hover:bg-foreground/5 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                 >
                   {link.label}
