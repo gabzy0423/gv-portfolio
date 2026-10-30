@@ -11,7 +11,7 @@ export function ThemeToggle({ segmented = false }: { segmented?: boolean }) {
   useEffect(() => {
     const savedTheme = window.localStorage.getItem("theme");
     const nextThemeMode: ThemeMode = savedTheme === "dark" || savedTheme === "light" ? savedTheme : "default";
-    const shouldUseDark = nextThemeMode === "dark";
+    const shouldUseDark = nextThemeMode !== "light";
 
     document.documentElement.classList.toggle("dark", shouldUseDark);
 
@@ -20,14 +20,14 @@ export function ThemeToggle({ segmented = false }: { segmented?: boolean }) {
   }, []);
 
   function setTheme(nextThemeMode: ThemeMode) {
-    const nextIsDark = nextThemeMode === "dark";
+    const nextIsDark = nextThemeMode !== "light";
 
     document.documentElement.classList.toggle("dark", nextIsDark);
     window.localStorage.setItem("theme", nextThemeMode);
     setThemeMode(nextThemeMode);
   }
 
-  const isDark = themeMode === "dark";
+  const isDark = themeMode !== "light";
 
   if (!segmented) {
     return (
@@ -51,7 +51,7 @@ export function ThemeToggle({ segmented = false }: { segmented?: boolean }) {
       <button
         type="button"
         onClick={() => setTheme("default")}
-        aria-label="Use default light mode"
+        aria-label="Use default dark mode"
         aria-pressed={themeMode === "default"}
         className={`grid size-5 place-items-center rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
           themeMode === "default" ? "bg-foreground/10 text-foreground" : "text-muted hover:bg-foreground/10 hover:text-foreground"

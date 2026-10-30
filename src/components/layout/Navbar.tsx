@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Bars3Icon, EnvelopeIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { ArrowRightIcon, Bars3Icon, EnvelopeIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { SoundToggle } from "@/components/ui/SoundToggle";
 
@@ -105,19 +105,27 @@ export function Navbar() {
             data-lenis-prevent
             className={`mobile-menu-sheet fixed inset-x-0 top-10 z-40 flex h-[calc(100vh-2.5rem)] w-full flex-col overflow-y-auto rounded-b-2xl border border-t-0 border-line bg-background p-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] shadow-xl sm:hidden ${isMenuOpen ? "mobile-menu-open" : "mobile-menu-closing"}`}
           >
-            <div className="flex flex-col gap-1 font-mono text-sm text-muted">
+            <div className="flex flex-col pt-3 font-pixel text-2xl text-muted">
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={closeMenu}
-                  className="rounded-md px-0 py-2 transition-colors hover:bg-foreground/5 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  className="flex items-center justify-between border-b border-line px-0 py-4 transition-[color,transform] duration-300 ease-out hover:translate-x-1 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                 >
-                  {link.label}
+                  <span>{link.label}</span>
+                  <ArrowRightIcon aria-hidden="true" className="size-4 shrink-0" />
                 </Link>
               ))}
             </div>
-            <div className="mt-auto mb-4 border-t border-line pt-6">
+            <div className="mt-8 max-w-xs">
+              <div className="flex items-center gap-2 font-pixel text-xs text-foreground">
+                <span className="size-1.5 rounded-full bg-accent" aria-hidden="true" />
+                Available for freelance &amp; collaboration
+              </div>
+              <p className="mt-2 font-pixel text-[11px] leading-relaxed text-muted">Software Developer · Metro Manila, Philippines</p>
+            </div>
+            <div className="mt-auto mb-4 flex flex-col gap-5 border-t border-line pt-5">
               <div className="flex items-center gap-2">
                 <ThemeToggle segmented />
                 <div className="rounded-full border border-line p-0">
@@ -126,10 +134,10 @@ export function Navbar() {
               </div>
               <a
                 href="mailto:gabrielvargas0423@gmail.com"
-                className="mt-4 flex flex-col gap-2 text-muted transition-colors hover:text-foreground focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                className="flex flex-col gap-2 text-muted transition-colors hover:text-foreground focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               >
-                <span className="max-w-xs font-mono text-[11px] leading-relaxed">For work, projects &amp; everything else, reach me at</span>
-                <span className="flex items-center gap-2 font-mono text-xs font-semibold text-foreground">
+                <span className="max-w-xs font-pixel text-[11px] leading-relaxed">For work, projects &amp; everything else, reach me at</span>
+                <span className="flex items-center gap-2 font-pixel text-xs font-semibold text-foreground">
                   <EnvelopeIcon className="size-3.5 shrink-0" aria-hidden="true" />
                   gabrielvargas0423@gmail.com
                 </span>
