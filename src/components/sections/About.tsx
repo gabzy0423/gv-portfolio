@@ -3,13 +3,15 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const interests = ["Travel", "Gym", "Muay Thai", "Dance"];
+const interests = ["Outgoing", "Cat lover", "Family oriented", "Guitarist", "Jogger", "Nature lover"];
 
 const outsideCards = [
-  { label: "Travel", hint: "Add travel image", image: undefined },
-  { label: "Gym", hint: "Add gym image", image: undefined },
-  { label: "Muay Thai", hint: "Add training image", image: undefined },
-  { label: "Dance", hint: "Add dance image", image: undefined },
+  { label: "Outgoing", hint: "Always up for good conversations", image: "/images/gallery/outgoing.jpg" },
+  { label: "Cat lover", hint: "Cats make every day better", image: "/images/gallery/cat.jpg" },
+  { label: "Family oriented", hint: "Grounded by the people I love", image: "/images/gallery/family.jpg" },
+  { label: "Guitarist", hint: "Making time for music", image: "/images/gallery/guitar.jpg" },
+  { label: "Jogger", hint: "Clearing my head one run at a time", image: "/images/gallery/run.jpg" },
+  { label: "Nature lover", hint: "Finding perspective outdoors", image: "/images/gallery/nature.jpg" },
 ];
 
 const cardTransforms = [
@@ -17,6 +19,8 @@ const cardTransforms = [
   "translate(-50%, -50%) translate(14px, -8px) scale(0.96) rotateZ(2deg)",
   "translate(-50%, -50%) translate(28px, 4px) scale(0.92) rotateZ(6deg)",
   "translate(-50%, -50%) translate(40px, 10px) scale(0.88) rotateZ(9deg)",
+  "translate(-50%, -50%) translate(50px, 15px) scale(0.84) rotateZ(12deg)",
+  "translate(-50%, -50%) translate(58px, 20px) scale(0.80) rotateZ(15deg)",
 ];
 
 type Contribution = {
@@ -147,7 +151,6 @@ export function OutsideIde() {
                   <span className="font-mono text-[11px] text-muted">{card.hint}</span>
                 </div>
               )}
-              {card.image && <span className="absolute inset-x-4 bottom-4 rounded-md bg-background/70 px-2 py-1 font-mono text-[11px] text-foreground backdrop-blur-sm">{card.label}</span>}
             </button>
             );
           })}
