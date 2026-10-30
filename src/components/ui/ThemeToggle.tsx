@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 
 export function ThemeToggle() {
   const [isDark, setIsDark] = useState(false);
@@ -31,16 +32,10 @@ export function ThemeToggle() {
       aria-pressed={isDark}
       className="grid size-9 shrink-0 place-items-center rounded-full text-muted transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
-      {isDark ? (
-        <svg viewBox="0 0 24 24" className="theme-toggle-icon size-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.5 6.5 0 0 0 21 12.8Z" />
-        </svg>
-      ) : (
-        <svg viewBox="0 0 24 24" className="theme-toggle-icon size-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-          <circle cx="12" cy="12" r="3.25" />
-          <path strokeLinecap="round" d="M12 2.5v2M12 19.5v2M4.58 4.58l1.42 1.42M18 18l1.42 1.42M2.5 12h2M19.5 12h2M4.58 19.42 6 18M18 6l1.42-1.42" />
-        </svg>
-      )}
+      <span className="relative size-4" aria-hidden="true">
+        <SunIcon className="theme-toggle-icon theme-toggle-light absolute inset-0 size-4" />
+        <MoonIcon className="theme-toggle-icon theme-toggle-dark absolute inset-0 size-4" />
+      </span>
     </button>
   );
 }

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 const links = [
@@ -49,9 +50,7 @@ export function Navbar() {
             aria-expanded={isMenuOpen}
             className="grid size-9 place-items-center rounded-md text-muted transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:hidden"
           >
-            <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-              <path strokeLinecap="round" d="M4 7h16M4 12h16M4 17h16" />
-            </svg>
+            <Bars3Icon className="size-5" aria-hidden="true" />
           </button>
         </div>
       </nav>
@@ -79,9 +78,7 @@ export function Navbar() {
                 aria-label="Close navigation menu"
                 className="grid size-11 place-items-center rounded-md text-muted transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
-                <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-                  <path strokeLinecap="round" d="m6 6 12 12M18 6 6 18" />
-                </svg>
+                <XMarkIcon className="size-5" aria-hidden="true" />
               </button>
             </div>
             <div className="mt-10 flex flex-col gap-1 font-mono text-sm text-muted">

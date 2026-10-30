@@ -52,6 +52,18 @@ body * {
   transition: none !important;
 }
 
+.theme-toggle-dark {
+  display: none !important;
+}
+
+.dark .theme-toggle-light {
+  display: none !important;
+}
+
+.dark .theme-toggle-dark {
+  display: block !important;
+}
+
 ::selection {
   background: #dbeafe;
   color: #1e3a8a;
