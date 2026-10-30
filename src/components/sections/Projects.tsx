@@ -5,10 +5,10 @@ export function Projects({ showAll = false }: { showAll?: boolean }) {
   const visibleProjects = showAll ? projects : projects.slice(0, 3);
 
   return (
-    <section id="projects" aria-labelledby="projects-heading" className="mx-auto max-w-6xl px-6 py-20 lg:px-8 lg:py-28">
+    <section id="projects" aria-labelledby="projects-heading" className="mx-auto max-w-4xl px-6 py-20 lg:py-28">
       <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">03 · Projects</p>
+          <p className="font-pixel text-sm font-bold tracking-tight text-foreground">01 — Projects</p>
           <h2 id="projects-heading" className="mt-3 text-3xl font-semibold tracking-tight">Selected work</h2>
         </div>
         {!showAll && <Link href="/projects" className="text-sm font-semibold text-accent hover:underline">View all projects ↗</Link>}
