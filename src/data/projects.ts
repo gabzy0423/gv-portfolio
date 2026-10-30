@@ -31,4 +31,14 @@ export const projects: Project[] = [
     technologies: ["Technology", "Framework", "Tool"],
     outcome: "Add the result, metric, or lesson learned here.",
   },
+  {
+    slug: "project-four",
+    title: "Fourth project placeholder",
+    summary: "Add another featured project, product, or case study here.",
+    description:
+      "Replace this placeholder with the project context, your contribution, implementation details, and outcome.",
+    role: "Your role here",
+    technologies: ["Technology", "Framework", "Tool"],
+    outcome: "Add the result, metric, or lesson learned here.",
+  },
 ];

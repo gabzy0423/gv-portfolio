@@ -13,6 +13,18 @@ export const experience: ExperienceItem[] = [
     period: "Start year – End year",
     description: "Add another experience entry, or remove this item if it is not needed.",
   },
+  {
+    company: "Third company placeholder",
+    role: "Role title placeholder",
+    period: "Start year â€“ End year",
+    description: "Add a concise summary of this role, responsibilities, and impact.",
+  },
+  {
+    company: "Fourth company placeholder",
+    role: "Role title placeholder",
+    period: "Start year â€“ End year",
+    description: "Add another relevant experience entry or remove this placeholder later.",
+  },
 ];
 
 export const education: EducationItem[] = [
