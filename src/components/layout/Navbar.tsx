@@ -57,7 +57,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-30 border-b border-line bg-background/75 shadow-sm backdrop-blur-xl backdrop-saturate-150">
-      <nav aria-label="Primary navigation" className="mx-auto flex min-h-16 max-w-4xl items-center justify-between gap-4 px-6">
+      <nav aria-label="Primary navigation" className="mx-auto flex min-h-10 max-w-4xl items-center justify-between gap-4 px-4 sm:min-h-16 sm:px-6">
         <Link href="/" className="shrink-0 font-mono text-base font-bold tracking-tight text-foreground" aria-label="GV home">
           <Image src="/images/branding/gv-favicon.svg" alt="GV" width={28} height={28} className="size-7 rounded-md" priority />
         </Link>
@@ -95,14 +95,14 @@ export function Navbar() {
             type="button"
             onClick={closeMenu}
             aria-label="Close navigation menu"
-            className={`mobile-menu-backdrop fixed inset-x-0 bottom-0 top-16 z-30 bg-black/20 sm:hidden ${isMenuOpen ? "mobile-menu-open" : "mobile-menu-closing"}`}
+            className={`mobile-menu-backdrop fixed inset-x-0 bottom-0 top-10 z-30 bg-black/20 sm:hidden ${isMenuOpen ? "mobile-menu-open" : "mobile-menu-closing"}`}
           />
           <aside
             role="dialog"
             id="mobile-navigation"
             aria-label="Mobile navigation"
             aria-modal="true"
-            className={`mobile-menu-sheet fixed inset-x-0 top-16 z-40 flex h-[calc(100vh-4rem)] w-full flex-col overflow-y-auto rounded-b-2xl border border-t-0 border-line bg-background p-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] shadow-xl sm:hidden ${isMenuOpen ? "mobile-menu-open" : "mobile-menu-closing"}`}
+            className={`mobile-menu-sheet fixed inset-x-0 top-10 z-40 flex h-[calc(100vh-2.5rem)] w-full flex-col overflow-y-auto rounded-b-2xl border border-t-0 border-line bg-background p-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] shadow-xl sm:hidden ${isMenuOpen ? "mobile-menu-open" : "mobile-menu-closing"}`}
           >
             <div className="flex flex-col gap-1 font-mono text-sm text-muted">
               {links.map((link) => (

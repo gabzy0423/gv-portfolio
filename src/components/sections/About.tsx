@@ -124,7 +124,7 @@ export function OutsideIde() {
           </div>
         </div>
 
-        <div aria-label="Outside the IDE photo cards" className="relative mx-auto h-80 w-full max-w-md">
+        <div aria-label="Outside the IDE photo cards" className="relative mx-auto h-80 w-full max-w-md overflow-hidden">
           {outsideCards.map((card, cardIndex) => {
             const slot = (cardIndex - activeIndex + outsideCards.length) % outsideCards.length;
 

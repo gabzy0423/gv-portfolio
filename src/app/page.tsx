@@ -1,4 +1,4 @@
-import { Hero } from "@/components/sections/Hero";
+import { Hero, HeroHighlights } from "@/components/sections/Hero";
 import { Projects } from "@/components/sections/Projects";
 import { TechStack } from "@/components/sections/TechStack";
 import { TechStackMarquee } from "@/components/sections/TechStackMarquee";
@@ -10,6 +10,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <HeroHighlights />
       <TechStackMarquee />
       <Projects />
       <Experience />

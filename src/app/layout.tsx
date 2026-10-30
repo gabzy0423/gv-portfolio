@@ -44,7 +44,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="min-h-full bg-background text-foreground">
+      <body className="min-h-full overflow-x-clip bg-background text-foreground">
         <Navbar />
         <main>{children}</main>
         <Footer />
