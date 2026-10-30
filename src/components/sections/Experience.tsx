@@ -2,7 +2,7 @@ import { experience } from "@/data/experience";
 
 export function Experience() {
   return (
-    <section id="experience" aria-labelledby="experience-heading" className="border-b border-line bg-background text-foreground">
+    <section id="experience" aria-labelledby="experience-heading" className="bg-background text-foreground">
       <div className="mx-auto max-w-4xl px-6 py-20 lg:py-24">
         <div className="flex items-center justify-between gap-4">
           <p className="font-pixel text-sm font-bold tracking-tight">02 — Experience</p>

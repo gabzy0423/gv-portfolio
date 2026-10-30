@@ -2,28 +2,32 @@ import type { EducationItem, ExperienceItem } from "@/types/portfolio";
 
 export const experience: ExperienceItem[] = [
   {
-    company: "Company name placeholder",
-    role: "Role title placeholder",
-    period: "Start year – End year",
-    description: "Add a concise summary of what you owned and the impact of your work.",
+    company: "Independent Software Development",
+    role: "Software Developer · Freelance",
+    period: "2025 – Present",
+    description:
+      "Developing custom websites, web applications, and digital solutions. Managing frontend and backend development, database design, API integration, and deployment.",
   },
   {
-    company: "Another company placeholder",
-    role: "Role title placeholder",
-    period: "Start year – End year",
-    description: "Add another experience entry, or remove this item if it is not needed.",
+    company: "GoPasig",
+    role: "Full-Stack Developer",
+    period: "2025 – 2026",
+    description:
+      "Developed an integrated fleet management and GPS tracking platform with real-time vehicle monitoring, estimated arrival times, route management, dispatch operations, and administrative dashboards.",
   },
   {
-    company: "Third company placeholder",
-    role: "Role title placeholder",
-    period: "Start year â€“ End year",
-    description: "Add a concise summary of this role, responsibilities, and impact.",
+    company: "HarayaForge",
+    role: "Software Developer",
+    period: "2026 – Present",
+    description:
+      "Contributing to the development of customized websites, business management systems, and digital platforms. Collaborating on system architecture, frontend and backend implementation, and software delivery.",
   },
   {
-    company: "Fourth company placeholder",
-    role: "Role title placeholder",
-    period: "Start year â€“ End year",
-    description: "Add another relevant experience entry or remove this placeholder later.",
+    company: "E-Commerce Solutions",
+    role: "Full-Stack Developer",
+    period: "2026 – Present",
+    description:
+      "Building an e-commerce platform with role-based dashboards, authentication, product management, and API-driven backend services using Next.js, React, TypeScript, Laravel, and PostgreSQL.",
   },
 ];
 

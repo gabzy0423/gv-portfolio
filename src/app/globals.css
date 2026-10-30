@@ -4,6 +4,15 @@
 
 @custom-variant dark (&:is(.dark *));
 
+.heatmap-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.heatmap-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 :root {
   --background: #fafafa;
   --foreground: #18181b;
@@ -134,26 +143,6 @@ body * {
   transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
 }
 
-@keyframes mobile-menu-fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes mobile-menu-fade-out {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-}
-
 @keyframes tech-marquee {
   from {
     transform: translateX(0);
@@ -177,6 +166,71 @@ body * {
 .tech-marquee:hover .tech-marquee-track,
 .tech-marquee:focus-within .tech-marquee-track {
   animation-play-state: paused;
+}
+
+@keyframes tech-stack-row-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes tech-stack-row-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.tech-stack-row {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.tech-stack-row-1 .tech-stack-row-track {
+  animation: tech-stack-row-left 28s linear infinite;
+}
+
+.tech-stack-row-2 .tech-stack-row-track {
+  animation: tech-stack-row-right 32s linear infinite;
+}
+
+.tech-stack-row-3 .tech-stack-row-track {
+  animation: tech-stack-row-left 36s linear infinite;
+}
+
+.tech-stack-row:hover .tech-stack-row-track,
+.tech-stack-row:focus-within .tech-stack-row-track {
+  animation-play-state: paused;
+}
+
+@keyframes mobile-menu-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mobile-menu-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 
 .mobile-menu-open {
@@ -238,6 +292,11 @@ body * {
   .tech-marquee-track {
     animation: none !important;
   }
+
+  .tech-stack-row-track {
+    animation: none !important;
+  }
+
 }
 
 @layer base {
