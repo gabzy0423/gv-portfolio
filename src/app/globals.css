@@ -48,20 +48,20 @@ body * {
   transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
 }
 
-.theme-toggle-icon {
-  transition: none !important;
+@keyframes mobile-menu-reveal {
+  from {
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
 }
 
-.theme-toggle-dark {
-  display: none !important;
-}
-
-.dark .theme-toggle-light {
-  display: none !important;
-}
-
-.dark .theme-toggle-dark {
-  display: block !important;
+.mobile-menu-sheet {
+  animation: mobile-menu-reveal 220ms ease-out;
 }
 
 ::selection {
@@ -83,5 +83,9 @@ body * {
   body,
   body * {
     transition: none !important;
+  }
+
+  .mobile-menu-sheet {
+    animation: none !important;
   }
 }

@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, EnvelopeIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { SoundToggle } from "@/components/ui/SoundToggle";
 
 const links = [
   { href: "/projects", label: "Projects" },
@@ -41,16 +42,21 @@ export function Navbar() {
             ))}
             <span className="ml-1 h-6 w-px bg-line" aria-hidden="true" />
           </div>
-          <ThemeToggle />
+          <div className="hidden sm:block">
+            <ThemeToggle />
+          </div>
           <button
             type="button"
-            onClick={() => setIsMenuOpen(true)}
-            aria-label="Open navigation menu"
+            onClick={() => setIsMenuOpen((open) => !open)}
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-controls="mobile-navigation"
             aria-expanded={isMenuOpen}
             className="grid size-9 place-items-center rounded-md text-muted transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:hidden"
           >
-            <Bars3Icon className="size-5" aria-hidden="true" />
+            <span className="relative size-5" aria-hidden="true">
+              <Bars3Icon className={`absolute inset-0 size-5 transform-gpu transition-[transform,opacity] duration-200 ease-out ${isMenuOpen ? "rotate-90 opacity-0" : "rotate-0 opacity-100"}`} />
+              <XMarkIcon className={`absolute inset-0 size-5 transform-gpu transition-[transform,opacity] duration-200 ease-out ${isMenuOpen ? "rotate-0 opacity-100" : "-rotate-90 opacity-0"}`} />
+            </span>
           </button>
         </div>
       </nav>
@@ -61,37 +67,44 @@ export function Navbar() {
             type="button"
             onClick={() => setIsMenuOpen(false)}
             aria-label="Close navigation menu"
-            className="fixed inset-0 z-30 bg-black/20 sm:hidden"
+            className="fixed inset-x-0 bottom-0 top-16 z-30 bg-black/20 sm:hidden"
           />
           <aside
             role="dialog"
             id="mobile-navigation"
             aria-label="Mobile navigation"
             aria-modal="true"
-            className="fixed inset-y-0 right-0 z-40 flex w-[min(19rem,85vw)] flex-col border-l border-line bg-background p-6 shadow-xl sm:hidden"
+            className="mobile-menu-sheet fixed inset-x-0 top-16 z-40 flex h-[calc(100vh-4rem)] w-full flex-col overflow-y-auto rounded-b-2xl border border-t-0 border-line bg-background p-6 pb-[max(1.5rem,env(safe-area-inset-bottom))] shadow-xl sm:hidden"
           >
-            <div className="flex items-center justify-between">
-              <span className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-muted">Menu</span>
-              <button
-                type="button"
-                onClick={() => setIsMenuOpen(false)}
-                aria-label="Close navigation menu"
-                className="grid size-11 place-items-center rounded-md text-muted transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-              >
-                <XMarkIcon className="size-5" aria-hidden="true" />
-              </button>
-            </div>
-            <div className="mt-10 flex flex-col gap-1 font-mono text-sm text-muted">
+            <div className="flex flex-col gap-1 font-mono text-sm text-muted">
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="rounded-md px-3 py-3 transition-colors hover:bg-foreground/5 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  className="rounded-md px-0 py-2 transition-colors hover:bg-foreground/5 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                 >
                   {link.label}
                 </Link>
               ))}
+            </div>
+            <div className="mt-auto mb-4 border-t border-line pt-6">
+              <div className="flex items-center gap-2">
+                <ThemeToggle segmented />
+                <div className="rounded-full border border-line p-0">
+                  <SoundToggle />
+                </div>
+              </div>
+              <a
+                href="mailto:gabrielvargas0423@gmail.com"
+                className="mt-4 flex flex-col gap-2 text-muted transition-colors hover:text-foreground focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              >
+                <span className="max-w-xs font-mono text-[11px] leading-relaxed">For work, projects &amp; everything else, reach me at</span>
+                <span className="flex items-center gap-2 font-mono text-xs font-semibold text-foreground">
+                  <EnvelopeIcon className="size-3.5 shrink-0" aria-hidden="true" />
+                  gabrielvargas0423@gmail.com
+                </span>
+              </a>
             </div>
           </aside>
         </>
