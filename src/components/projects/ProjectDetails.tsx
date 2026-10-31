@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowLeftIcon, ArrowUpRightIcon } from "@heroicons/react/24/outline";
 import type { Project } from "@/types/portfolio";
 
-export function ProjectPage({ project }: { project: Project }) {
+export function ProjectDetails({ project }: { project: Project }) {
   return (
     <article className="mx-auto max-w-4xl px-6 py-16 lg:py-24">
       <Link href="/projects" className="inline-flex items-center gap-2 font-pixel text-xs text-muted transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">

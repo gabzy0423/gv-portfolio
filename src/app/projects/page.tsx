@@ -1,4 +1,4 @@
-import { Projects } from "@/components/sections/Projects";
+import { ProjectGrid } from "@/components/projects/ProjectGrid";
 
 export const metadata = {
   title: "Projects | Gabriel Vargas",
@@ -6,5 +6,5 @@ export const metadata = {
 };
 
 export default function ProjectsPage() {
-  return <Projects showAll />;
+  return <ProjectGrid />;
 }

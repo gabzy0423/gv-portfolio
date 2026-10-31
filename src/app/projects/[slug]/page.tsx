@@ -1,6 +1,6 @@
 import { projects } from "@/data/projects";
 import { notFound } from "next/navigation";
-import { ProjectPage } from "@/components/projects/ProjectPage";
+import { ProjectDetails } from "@/components/projects/ProjectDetails";
 
 export function generateStaticParams() {
   return projects.map(({ slug }) => ({ slug }));
@@ -12,5 +12,5 @@ export default async function ProjectDetailsPage({ params }: PageProps<"/project
 
   if (!project) notFound();
 
-  return <ProjectPage project={project} />;
+  return <ProjectDetails project={project} />;
 }

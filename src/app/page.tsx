@@ -1,10 +1,10 @@
-import { Hero, HeroHighlights } from "@/components/sections/Hero";
-import { Projects } from "@/components/sections/Projects";
-import { TechStack } from "@/components/sections/TechStack";
-import { TechStackMarquee } from "@/components/sections/TechStackMarquee";
-import { Experience } from "@/components/sections/Experience";
-import { OutsideIde } from "@/components/sections/About";
-import { Contact } from "@/components/sections/Contact";
+import { Hero, HeroHighlights } from "@/components/home/HeroSection";
+import { Projects } from "@/components/home/ProjectPreview";
+import { TechStack } from "@/components/home/TechStackSection";
+import { TechStackMarquee } from "@/components/home/TechStackMarquee";
+import { Experience } from "@/components/experience/ExperienceTimeline";
+import { OutsideIde } from "@/components/home/AboutSection";
+import { Contact } from "@/components/home/ContactSection";
 
 export default function Home() {
   return (

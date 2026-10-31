@@ -1,4 +1,4 @@
-import { Contact } from "@/components/sections/Contact";
+import { Contact } from "@/components/home/ContactSection";
 
 export const metadata = {
   title: "Contact | Gabriel Vargas",
